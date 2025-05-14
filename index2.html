@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Obtener el idioma del navegador
+        const idiomas = navigator.languages && navigator.languages.length
+    ? navigator.languages
+    : [navigator.language || navigator.userLanguage];
+
+const idiomaPrincipal = idiomas[0].split('-')[0].toLowerCase();
+
+        console.log(idiomaPrincipal);
+        // Función para redirigir según idioma
+        function redirigirPorIdioma(idioma) {
+            switch (idioma) {
+                case 'es':
+                    window.location.href = 'https://erospain.eventscase.com/ES/app2025/menu-eventos';
+                    break;
+                case 'en':
+                    window.location.href = 'https://erospain.eventscase.com/EN/app2025/menu-eventos';
+                    break;
+                case 'fr':
+                    window.location.href = 'https://erospain.eventscase.com/FR/app2025/menu-eventos';
+                    break;
+                default:
+                    window.location.href = 'https://erospain.eventscase.com/EN/app2025/menu-eventos';
+                    break;
+            }
+        }
+
+        // Ejecutar la redirección
+        redirigirPorIdioma(idiomaPrincipal);
+    </script>
+</body>
+</html>
