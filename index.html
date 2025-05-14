@@ -11,7 +11,10 @@
 
     <script>
         // Obtener el idioma del navegador
-        const idioma = navigator.language || navigator.userLanguage;
+        const idiomas = navigator.languages && navigator.languages.length
+    ? navigator.languages
+    : [navigator.language || navigator.userLanguage];
+
         const idiomaPrincipal = idioma.split('-')[0].toLowerCase(); // Solo el código principal
 
         // Función para redirigir según idioma
