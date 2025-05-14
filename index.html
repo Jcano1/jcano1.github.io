@@ -15,8 +15,9 @@
     ? navigator.languages
     : [navigator.language || navigator.userLanguage];
 
-        const idiomaPrincipal = idiomas.split('-')[0].toLowerCase(); // Solo el código principal
+const idiomaPrincipal = idiomas[0].split('-')[0].toLowerCase();
 
+        console.log(idiomaPrincipal);
         // Función para redirigir según idioma
         function redirigirPorIdioma(idioma) {
             switch (idioma) {
@@ -36,7 +37,7 @@
         }
 
         // Ejecutar la redirección
-        redirigirPorIdioma(idiomaPrincipal);
+        //redirigirPorIdioma(idiomaPrincipal);
 
     </script>
 </body>
