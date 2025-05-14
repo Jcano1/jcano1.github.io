@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <p>prueba</p>
 
     <script>
-        const idioma = navigator.language;
-        console.log(idioma);
+        // Obtener el idioma del navegador
+        const idioma = navigator.language || navigator.userLanguage;
+        const idiomaPrincipal = idioma.split('-')[0].toLowerCase(); // Solo el código principal
+
+        // Función para redirigir según idioma
+        function redirigirPorIdioma(idioma) {
+            switch (idioma) {
+                case 'es':
+                    window.location.href = 'https://tusitio.com/es/';
+                    break;
+                case 'en':
+                    window.location.href = 'https://tusitio.com/en/';
+                    break;
+                case 'fr':
+                    window.location.href = 'https://tusitio.com/fr/';
+                    break;
+                default:
+                    // Si no es ninguno de los anteriores, redirigir a una página por defecto
+                    window.location.href = 'https://tusitio.com/default/';
+                    break;
+            }
+        }
+
+        // Ejecutar la redirección
+        redirigirPorIdioma(idiomaPrincipal);
+
     </script>
 </body>
+
 </html>
